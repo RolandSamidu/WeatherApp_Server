@@ -1,5 +1,8 @@
 const express = require('express');
 const connectDB = require('./db/connect');
+// const cron = require('node-cron');
+// const weatherService = require('../services/weatherService');
+// const emailService = require('../services/emailService');
 
 const app = express();
 
