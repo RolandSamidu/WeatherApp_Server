@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     },
     weatherData: [{
         date: { type: Date, required: true },
-        data: { type: Object, required: true }
+        data: { type: String, required: true }
     }]
 });
 

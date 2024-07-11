@@ -1,24 +1,17 @@
-require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const routes = require('./routes/routes');
+const connectDB = require('./db/connect');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
-app.use(express.json());
+// Connect Database
+connectDB();
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error(err));
+// Init Middleware
+app.use(express.json({ extended: false }));
 
-app.use('/api', routes);
+// Define Routes
+app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/weather', require('./routes/weatherRoutes'));
 
-app.use((err, req, res, next) => {
-    res.status(500).json({ error: err.message });
-});
-
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
