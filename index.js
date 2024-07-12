@@ -3,6 +3,7 @@ const connectDB = require('./db/connect');
 const cron = require('node-cron');
 const weatherService = require('./Services/weatherService');
 const emailService = require('./Services/emailService');
+const User = require('./models/userModel');
 
 const app = express();
 

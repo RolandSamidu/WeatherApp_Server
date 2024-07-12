@@ -1,5 +1,5 @@
 const User = require('../models/userModel');
-const weatherService = require('../services/weatherService');
+const weatherService = require('../Services/weatherService');
 
 exports.addUser = async (req, res) => {
     const { email, location } = req.body;

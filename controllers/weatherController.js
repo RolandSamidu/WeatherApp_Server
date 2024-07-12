@@ -1,5 +1,17 @@
 const Weather = require('../models/weatherModel');
 
+exports.createWeatherData = async (req, res) => {
+    const { userId, date, weather } = req.body;
+    try {
+        const weatherData = new Weather({ userId, date, weather });
+        await weatherData.save();
+        res.status(201).json(weatherData);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+};
+
 exports.getWeatherData = async (req, res) => {
     const { userId, date } = req.params;
     try {
