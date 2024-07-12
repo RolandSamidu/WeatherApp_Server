@@ -2,5 +2,5 @@
     "mongoURI": "mongodb+srv://admin:admin@myproject.zzdbqmr.mongodb.net/weatherApp?retryWrites=true&w=majority&appName=MyProject",
     "weatherApiKey": "163834e20a3000d33ea986c4c0c4d75d",
     "emailUser": "cardiosyncpro.2k24@gmail.com",
-    "emailPass": "CardioSync@24"
+    "emailPass": "12345678"
 }
