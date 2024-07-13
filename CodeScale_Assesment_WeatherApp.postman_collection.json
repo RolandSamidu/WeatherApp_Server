@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "e3800de4-c4dc-40a6-8759-845031d89c4c",
+		"name": "CodeScale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20491020"
+	},
+	"item": [
+		{
+			"name": "post method",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test1@gmail.com\",\r\n    \"location\": {\r\n        \"lat\": 37.7749,\r\n        \"lon\": -122.4194\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update location",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"location\": {\r\n        \"lat\": 37.7749,\r\n        \"lon\": -122.4194\r\n    } }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/6691a7775c7d36d942532c31/location",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"6691a7775c7d36d942532c31",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post weather data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"6690cd71bed5b060438f6e37\",\r\n    \"date\": \"2024-07-12T12:53:00.000Z\",\r\n    \"weather\": \"Sunny with a chance of rain\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get weather data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/weather/6690cd71bed5b060438f6e37/2024-07-12T12:53:00.000Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"weather",
+						"6690cd71bed5b060438f6e37",
+						"2024-07-12T12:53:00.000Z"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
